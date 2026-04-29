@@ -17,7 +17,7 @@ function App() {
         .from("todo")
         .select()
         .order("created_at", { ascending: true });
-      setTodos(data);
+      setTodos(data ?? []);
     };
     fetchTodos();
   }, []);
@@ -35,7 +35,7 @@ function App() {
         .from("todo")
         .select()
         .order("created_at", { ascending: true });
-      setTodos(data);
+      setTodos(data ?? []);
       setTitle("");
     }
   };
@@ -55,7 +55,7 @@ function App() {
       .select()
       .order("created_at", { ascending: true });
 
-    setTodos(data);
+    setTodos(data ?? []);
   };
 
   return (
